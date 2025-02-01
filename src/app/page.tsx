@@ -1,4 +1,4 @@
-
+/*eslint-disable*/
 "use client"
 
 import RandomRecipe from "../components/RandomRecipe";
@@ -13,7 +13,7 @@ export default function Home() {
             <RandomRecipe />
             <h2>Featured</h2>
             <RecetasDestacadas />
-            <div className="d-flex flex-column align-items-center mt-3">
+            {/*<div className="d-flex flex-column align-items-center mt-3">
                 <h2>Share</h2>
                 <div className=" d-flex justify-content-between">
                     <FacebookShareButton url={"https://leote2001.github.io/recipes"}>
@@ -30,6 +30,7 @@ export default function Home() {
                     </WhatsappShareButton>
                 </div>
             </div>
+    */}
         </>
     );
 }
