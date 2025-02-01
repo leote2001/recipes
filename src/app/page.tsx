@@ -1,4 +1,4 @@
-/*eslint-disable*/
+
 "use client"
 
 import RandomRecipe from "../components/RandomRecipe";
@@ -13,24 +13,40 @@ export default function Home() {
             <RandomRecipe />
             <h2>Featured</h2>
             <RecetasDestacadas />
-            {/*<div className="d-flex flex-column align-items-center mt-3">
+            <div className="d-flex flex-column align-items-center mt-3">
                 <h2>Share</h2>
                 <div className=" d-flex justify-content-between">
-                    <FacebookShareButton url={"https://leote2001.github.io/recipes"}>
+                    <FacebookShareButton 
+                    url={"https://recipes-ten-mauve.vercel.app/"}
+                    title="Recipes"
+                    quote="Recipes from all over the world"
+                    hashtag={"#webapp"}
+                    >
                         <FacebookIcon size={32} round />
                     </FacebookShareButton>
-                    <TwitterShareButton url={"https://leote2001.github.io/recipes"}>
+                    <TwitterShareButton 
+                    url={"https://recipes-ten-mauve.vercel.app/"}
+                    title="Recipes from all over the world"
+                    hashtags={["recipes", "nextjs", "food", "recetas"]}
+                    >
                         <TwitterIcon size={32} round />
                     </TwitterShareButton>
-                    <LinkedinShareButton url={"https://leote2001.github.io/recipes"}>
+                    <LinkedinShareButton 
+                    url="https://recipes-ten-mauve.vercel.app/"
+                    title="Recipes from all over the world"
+                    >
                         <LinkedinIcon size={32} round />
                     </LinkedinShareButton>
-                    <WhatsappShareButton url={"https://leote2001.github.io/recipes"}>
+                    <WhatsappShareButton 
+                    url={"https://recipes-ten-mauve.vercel.app/"}
+                    title="Recipes from all over the world"
+                    separator=" - "
+                    >
                         <WhatsappIcon size={32} round />
                     </WhatsappShareButton>
                 </div>
             </div>
-    */}
+    
         </>
     );
 }
