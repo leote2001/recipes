@@ -2,7 +2,7 @@
 "use client"
 import React, {useEffect, ReactNode } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
-import "globals.css";
+import "../globals.css";
 import Link from 'next/link';
 interface LayoutProps {
     children: ReactNode;
