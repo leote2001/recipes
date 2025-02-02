@@ -15,6 +15,7 @@ export type RecetaType = {
   strArea: string;
 }
 export default function RecipePage() {
+  const currentUrl = typeof window !== "undefined" ? window.location.href : "";
   const { id } = useParams();
   const [receta, setReceta] = useState<RecetaType | null>(null);
   const [videoYt, setVideoYt] = useState<string>("");
@@ -62,6 +63,7 @@ export default function RecipePage() {
           </figure>
           <p>Area: {receta.strArea}</p>
           <p>Category: {receta.strCategory}</p>
+          <p>{currentUrl}</p>
           <VideoYt vidUrl={videoYt}/>
           <h3>Instructions</h3>
           <p>{receta.strInstructions}</p>
