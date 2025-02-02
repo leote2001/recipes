@@ -1,5 +1,6 @@
 /*eslint-disable*/
 "use client"
+import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, LinkedinShareButton, LinkedinIcon, WhatsappShareButton, WhatsappIcon } from 'next-share';
 import { apiBaseUrl } from '../../../utils/constants';
 import VideoYt from '../../../components/VideoYt';
 import React, { useState, useEffect } from 'react'
@@ -63,10 +64,42 @@ export default function RecipePage() {
           </figure>
           <p>Area: {receta.strArea}</p>
           <p>Category: {receta.strCategory}</p>
-          <p>{currentUrl}</p>
           <VideoYt vidUrl={videoYt}/>
           <h3>Instructions</h3>
           <p>{receta.strInstructions}</p>
+          <div className="d-flex flex-column align-items-center mt-3">
+                <h3>Share</h3>
+                <div className=" d-flex justify-content-between">
+                    <FacebookShareButton 
+                    url={currentUrl}
+                    title={receta.strMeal}
+                    quote={`Check ${receta.strMeal}`}
+                    hashtag={"#recipe"}
+                    >
+                        <FacebookIcon size={32} round />
+                    </FacebookShareButton>
+                    <TwitterShareButton 
+                    url={currentUrl}
+                    title={receta.strMeal}
+                    hashtags={["recipes", "nextjs", "food", "recetas"]}
+                    >
+                        <TwitterIcon size={32} round />
+                    </TwitterShareButton>
+                    <LinkedinShareButton 
+                    url={currentUrl}
+                    title={`Check ${receta.strMeal}`}
+                    >
+                        <LinkedinIcon size={32} round />
+                    </LinkedinShareButton>
+                    <WhatsappShareButton 
+                    url={currentUrl}
+                    title={`Check ${receta.strMeal}`}
+                    separator=" - "
+                    >
+                        <WhatsappIcon size={32} round />
+                    </WhatsappShareButton>
+                </div>
+            </div>
           <Link className='btn btn-primary' href="/">Back</Link>
         </div>
       }
