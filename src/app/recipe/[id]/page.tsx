@@ -1,6 +1,7 @@
 /*eslint-disable*/
 "use client"
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, LinkedinShareButton, LinkedinIcon, WhatsappShareButton, WhatsappIcon } from 'next-share';
+import Head from 'next/head';
 import { apiBaseUrl } from '../../../utils/constants';
 import VideoYt from '../../../components/VideoYt';
 import React, { useState, useEffect } from 'react'
@@ -55,6 +56,13 @@ export default function RecipePage() {
   }
   return (
     <>
+    <Head>
+      <title>{receta ? `${receta.strMeal}` : "Recipe not found"}</title>
+      <meta name='description' content='Check this recipe'/>
+      <meta property='og:title' content={receta ? `${receta.strMeal}` : "Recipe not found"}/>
+      <meta property='og:description' content='Check this recipe'/>
+      <meta property='og:url' content={receta ? `https://recipes-ten-mauve.vercel.app/recipe/${receta.idMeal}` : ""}/>
+    </Head>
       {receta &&
         <div className='container text-center'>
           <h2>{receta.strMeal}</h2>
@@ -72,8 +80,6 @@ export default function RecipePage() {
                 <div className=" d-flex justify-content-between">
                     <FacebookShareButton 
                     url={currentUrl}
-                    title={receta.strMeal}
-                    quote={`Check ${receta.strMeal}`}
                     hashtag={"#recipe"}
                     >
                         <FacebookIcon size={32} round />
