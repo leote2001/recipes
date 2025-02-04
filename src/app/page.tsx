@@ -7,6 +7,7 @@ import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, Lin
 import Search_Filter from "../components/Search_Filter";
 
 export default function Home() {
+    document.title = "Recipes";
     return (
         <>
             <Search_Filter />

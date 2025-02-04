@@ -38,6 +38,7 @@ export default function RecipePage() {
         const vidId = getVideoId(receta.strYoutube).id;
         setVideoYt("https://www.youtube.com/embed/" + vidId);
         setReceta(receta);
+        document.title = receta.strMeal;
       } catch (err: any) {
         setError("Getting recipe error");
       } finally {
