@@ -1,16 +1,21 @@
-/*eslint-disable*/
-"use client"
-import React, {useEffect, ReactNode } from 'react'
+import { Metadata } from "next";
+import { ReactNode } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../globals.css";
 import Link from 'next/link';
+
 interface LayoutProps {
     children: ReactNode;
 }
+export const metadata: Metadata = {
+    title: "Recipes",
+    description: "Recipes from all over the world",
+    openGraph: {
+        title: "Recipes",
+        description: "Recipes from all over the world"
+    }
+} 
 export default function Layout({ children }: LayoutProps) {
-    useEffect(() => {
-        require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
     return (
         <html lang='en'>
             <body>
