@@ -2,7 +2,7 @@
 "use client"
 import Link from 'next/link';
 import { apiBaseUrl } from '../utils/constants'
-import { RecetaType } from '../app/recipe/[id]/page';
+import { RecetaType } from './Recipe';
 import React, { useState } from 'react';
 
 export default function RandomRecipe() {

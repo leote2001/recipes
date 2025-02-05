@@ -1,4 +1,6 @@
 /*eslint-disable*/
+
+"use client"
 import CuadroCombinado from './CuadroCombinado';
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { apiBaseUrl } from '../utils/constants'
@@ -8,7 +10,7 @@ interface AYCProps {
   setError: Dispatch<SetStateAction<string>>;
   setAllRecetas: Dispatch<SetStateAction<any[]>>;
 }
-export default function AreasYCategorías({setCurrentPage, setLoading, setError, setAllRecetas }: AYCProps) {
+export default function AreasYCategorias({setCurrentPage, setLoading, setError, setAllRecetas }: AYCProps) {  
   const [componentError, setComponentError] = useState<string>("");
   const [componentLoading, setComponentLoading] = useState<boolean>(false);
   const [categories, setCategories] = useState<any[]>([]);

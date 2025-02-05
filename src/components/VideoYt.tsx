@@ -1,3 +1,4 @@
+"use client"
 interface VTProps {
     vidUrl: string;
 }

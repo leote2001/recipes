@@ -1,6 +1,6 @@
 /*eslint-disable*/
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import React, { Dispatch, MouseEvent, SetStateAction, useState, useRef } from 'react'
+"use client";
+import React, { Dispatch, MouseEvent, SetStateAction} from 'react'
 import { apiBaseUrl } from '../utils/constants';
 interface ComboBoxProps {
     setCurrentPage: Dispatch<SetStateAction<number>>;

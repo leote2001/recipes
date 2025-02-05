@@ -1,11 +1,13 @@
 /*eslint-disable*/
+"use client"
 import Link from 'next/link';
-import React, { Dispatch, SetStateAction, useState } from 'react'
+import React, { Dispatch, SetStateAction} from 'react'
 import Pagination from './Pagination';
+import { RecetaType } from './Recipe';
 interface ResultadosProps {
     currentPage: number;
     setCurrentPage: Dispatch<SetStateAction<number>>;
-    array: any[];
+    array: RecetaType[]; 
     error: string;
     loading: boolean;
 }
