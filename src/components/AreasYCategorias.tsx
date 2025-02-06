@@ -11,6 +11,10 @@ interface AYCProps {
   setAllRecetas: Dispatch<SetStateAction<any[]>>;
 }
 export default function AreasYCategorias({setCurrentPage, setLoading, setError, setAllRecetas }: AYCProps) {  
+  useEffect(() => {
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+}, []);
+
   const [componentError, setComponentError] = useState<string>("");
   const [componentLoading, setComponentLoading] = useState<boolean>(false);
   const [categories, setCategories] = useState<any[]>([]);

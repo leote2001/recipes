@@ -1,8 +1,5 @@
 /*eslint-disable*/
 "use client"
-useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.bundle.min.js");
-}, []);
 import React, { FormEvent, useEffect, useState } from 'react'
 import { apiBaseUrl } from '../utils/constants';
 import Resultados from './Resultados';
