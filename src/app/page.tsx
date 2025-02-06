@@ -1,7 +1,7 @@
 import RandomRecipe from "../components/RandomRecipe";
 import RecetasDestacadas from "../components/RecetasDestacadas";
 import Search_Filter from "../components/Search_Filter";
-import ShareButtons from "../components/ShareButtons";
+import HomeShareButtons from "../components/HomeShareButtons";
 export default function Home() {
     return (
         <>
@@ -9,7 +9,7 @@ export default function Home() {
             <RandomRecipe />
             <h2>Featured</h2>
             <RecetasDestacadas />
-            <ShareButtons/>
+            <HomeShareButtons/>
         </>
     );
 }

@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link';
 import getVideoId from 'get-video-id';
+import RecipeShareButtons from './RecipeShareButtons';
 export type RecetaType = {
   idMeal: string;
   strMeal: string;
@@ -15,7 +16,7 @@ export type RecetaType = {
   strArea: string;
 }
 export default function Recipe() {
-  //const currentUrl = typeof window !== "undefined" ? window.location.href : "";
+  const currentUrl = typeof window !== "undefined" ? window.location.href : "";
   const { id } = useParams();
   const [receta, setReceta] = useState<RecetaType | null>(null);
   const [videoYt, setVideoYt] = useState<string>("");
@@ -37,7 +38,7 @@ export default function Recipe() {
         const vidId = getVideoId(receta.strYoutube).id;
         setVideoYt("https://www.youtube.com/embed/" + vidId);
         setReceta(receta);
-        
+
       } catch (err: any) {
         setError("Getting recipe error");
       } finally {
@@ -55,7 +56,7 @@ export default function Recipe() {
   }
   return (
     <>
-    
+
       {receta &&
         <div className='container text-center'>
           <h2>{receta.strMeal}</h2>
@@ -68,7 +69,8 @@ export default function Recipe() {
           <VideoYt vidUrl={videoYt} />
           <h3>Instructions</h3>
           <p>{receta.strInstructions}</p>
-          
+          <hr />
+          <RecipeShareButtons url={currentUrl} title={receta.strMeal} description={`Learn how to prepare ${receta.strMeal}`}/>
           <Link className='btn btn-primary' href="/">Back</Link>
         </div>
       }
