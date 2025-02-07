@@ -8,9 +8,11 @@ interface LayoutProps {
     children: ReactNode;
 }
 export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
     title: "Recipes",
     description: "Recipes from all over the world",
     openGraph: {
+        url: "/", 
         title: "Recipes",
         description: "Recipes from all over the world"
     }
