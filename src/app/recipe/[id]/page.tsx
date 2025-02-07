@@ -12,7 +12,6 @@ export async function generateMetadata({ params}: {params: Promise<{id: string}>
     }
     const receta = data.meals[0];
     return {
-      metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL as string), 
       title: receta.strMeal,
       description: `Learn how to prepare ${receta.strMeal}`,
       openGraph: {
